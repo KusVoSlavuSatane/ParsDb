@@ -1,0 +1,49 @@
+[project]
+name = "akashevo-back"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.116.1",
+    "greenlet>=3.2.3",
+    "loguru>=0.7.3",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+    "sqlalchemy>=2.0.42",
+    "uvicorn>=0.35.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "ALL"
+]
+ignore = [
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D107",
+    "UP037",
+    "ANN201"
+]
+
+
+
+
+[tool.ruff.lint.per-file-ignores]
+"src/routes/*.py" = ["ANN201", "ANN202"]
+
+[tool.ruff.format]
+# Use tabs instead of 4 space indentation.
+indent-style = "space"
+quote-style = "double"
